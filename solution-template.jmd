@@ -26,8 +26,6 @@ function square_number(x)
   output = x^2;
   return output
 end
-
-...
 ```
 ## Problem 1.2
 
@@ -44,13 +42,16 @@ end
 
 using Plots
 plot(p, title = "A generic title", xlabel = "x", ylabel = "y", label = "a legend in the top left", legend = :topleft)
-...
+
 ```
 
 # Problem 2
 
 ## Problem 2.1
 
+'''math;
+\sqrt{x} 
+'''
 ## Problem 2.2
 
 # Problem 3
