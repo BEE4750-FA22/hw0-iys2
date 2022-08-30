@@ -135,9 +135,50 @@ end
 # Problem 4
 
 ## Problem 4.1
+```julia;
+import Pkg
+Pkg.activate(".")
+Pkg.instantiate()
+
+using Distributions
+using Plots
+
+my_normal = Normal(3.5, 1)
+
+rand(my_normal)
+rand(my_normal, 100)
+
+mu = log(0.03)
+sig = 0.005
+
+my_lognormal = LogNormal(mu, sig)
+pl = rand(my_lognormal, 100)
+
+plot(pl)
+```
 
 ## Problem 4.2
+```julia;
+
+function phos(a,b,q,y,t,x)
+p = zeros(t)
+  for i = 1:t 
+     p[i] = x + a + y[i] + (x^q)/(1+x^q) - b*x
+     x = p[i]
+  end
+
+return p
+end
+```
 
 ## Problem 4.3
+
+```julia;
+#Use above function with given parameters and a starting concentration of 10
+phosphorous = phos(0.4, 0.42, 2, pl, 100, 10)
+
+plot(phosphorous, xlabel = "Time (years)", ylabel = "Phosphorous Concentration", legend = false)
+
+```
 
 # References
