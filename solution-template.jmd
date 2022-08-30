@@ -41,7 +41,7 @@ for i in -10:10
 end
 
 using Plots
-plot(p, title = "A generic title", xlabel = "x", ylabel = "y", label = "a legend in the top left", legend = :topleft)
+plot(p, xlabel = "x", ylabel = "y", label = "a legend in the top left", legend = :topleft)
 
 ```
 
@@ -49,18 +49,74 @@ plot(p, title = "A generic title", xlabel = "x", ylabel = "y", label = "a legend
 
 ## Problem 2.1
 
-'''math;
-\sqrt{x} 
-'''
+If guess is $a$ is greater than the desired outcome $\sqrt{x}$, 
+
 ## Problem 2.2
+
+```julia;
+
+function newton(x, a)
+
+tolerance = 0.1
+  while true
+    
+    if abs(sqrt(x)-a) <= tolerance
+      break
+    else
+      new_a = ((x/a) + a)/2
+      a = new_a
+      println(a)
+    end
+    
+  end
+
+  return(a)
+
+end
+
+newton(2, 1, 0.1)
+```
+
 
 # Problem 3
 
 ## Problem 3.1
-
+```julia;
+vec = rand(20)
+```
 ## Problem 3.2
+```julia;
+
+function mean(x)
+  sum = 0
+  for i in x
+    sum = sum + x[i]
+  end
+
+  m = sum/length(x)
+  return m
+
+end
+
+mean(vec)
+
+function demean(x)
+  avg = mean(x)
+  for i in x
+    x[i] = x[i]-avg
+  end
+
+  return x
+end
+
+demean(vec)
+```
 
 ## Problem 3.3
+
+vec = zeros(10)
+vec[3:8] .= 1
+
 
 ## Problem 3.4
 
