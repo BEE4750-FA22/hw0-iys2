@@ -89,7 +89,7 @@ vec = rand(20)
 
 function mean(x)
   sum = 0
-  for i in x
+  for i in length(x)
     sum = sum + x[i]
   end
 
@@ -113,12 +113,24 @@ demean(vec)
 ```
 
 ## Problem 3.3
-
+```julia;
 vec = zeros(10)
 vec[3:8] .= 1
-
-
+```
 ## Problem 3.4
+```julia;
+mat = rand(5,5)
+
+for col in eachcol(mat)
+
+  m = mean(col)
+
+  for i in length(col)
+    col[i] = col[i] - m
+  end
+
+end
+```
 
 # Problem 4
 
