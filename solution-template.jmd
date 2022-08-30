@@ -177,8 +177,6 @@ end
 #Use above function with given parameters and a starting concentration of 10
 phosphorous = phos(0.4, 0.42, 2, pl, 100, 10)
 
-plot(phosphorous, xlabel = "Time (years)", ylabel = "Phosphorous Concentration", legend = false)
-
 ```
 
 # References
